@@ -1,0 +1,26 @@
+[
+  {
+    "packageClassName": "com.android.garbage.Garbage",
+    "importPackage": "android.util.Log,com.google.gson.Gson",
+    "importClassPath": "E:\\ASworkSpaces\\InjectCode\\app\\libs\\gson-2.7.jar",
+    "GarbageCode": [
+      {
+        "methodName": "runGarbage",
+        "insertBeforeCode": "Gson gson = new Gson(); Log.e(\"--->\", gson.toString());",
+        "insertAfterCode": "Log.e(\"--->\", \"Hello2 \");"
+      }
+    ]
+  },
+  {
+    "packageClassName": "com.github.injectcode.MainActivity",
+    "importPackage": "com.android.garbage.Garbage",
+    "importClassPath": "E:\\ASworkSpaces\\InjectCode\\app\\libs\\garbage.jar",
+    "GarbageCode": [
+      {
+        "methodName": "onCreate",
+        "insertBeforeCode": " try {\n            Garbage.runGarbage();\n        } catch (Exception var3) {\n            var3.printStackTrace();\n        } catch (Error var4) {\n            var4.printStackTrace();\n        }",
+        "insertAfterCode": "android.util.Log.e(\"--->\", \"Hello54151\");"
+      }
+    ]
+  }
+]

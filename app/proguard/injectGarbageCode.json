@@ -1,0 +1,33 @@
+[{
+  "packageClassName": "com.android.garbage.Garbage",
+  "importPackage": "android.util.Log,com.google.gson.Gson",
+  "importClassPath": "E:\\ASworkSpaces\\GameanalyticsDemo\\app\\libs\\gson-2.7.jar",
+  "GarbageCode": [{
+
+    "methodName": "runGarbage",
+    "insertBeforeCode": "Gson gson = new Gson(); Log.e(\"--->\", gson.toString());",
+    "insertAfterCode": "Log.e(\"--->\", \"Hello2 \");"
+
+  },
+
+    {
+      "methodName": "gohome",
+      "insertBeforeCode": "Log.e(\"--->\", \"Hello??\");",
+      "insertAfterCode": "Log.e(\"--->\", \"Hello0.013\");"
+
+    }
+  ]
+},
+  {
+    "packageClassName": "com.example.gameanalyticsdemo.MainActivity",
+    "importClassPath": "E:\\ASworkSpaces\\GameanalyticsDemo\\app\\libs\\garbage.jar",
+    "importPackage": "com.android.garbage.Garbage",
+    "GarbageCode": [{
+
+      "methodName": "onCreate",
+      "insertBeforeCode": " try {\n            Garbage.runGarbage();\n        } catch (Exception var3) {\n            var3.printStackTrace();\n        } catch (Error var4) {\n            var4.printStackTrace();\n        }",
+      "insertAfterCode": "android.util.Log.e(\"--->\", \"Hello54151\");"
+    }
+    ]
+  }
+]
